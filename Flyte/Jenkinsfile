@@ -4,7 +4,7 @@ pipeline{
 	stages{
 		stage('Start The Flyte Workflow'){
 			steps{
-				sh "pyflyte run --remote flyte_project/workflows/example.py wf --name "Gilgamesh" "
+				sh 'pyflyte run --remote flyte_project/workflows/example.py wf --name "Gilgamesh" '
 			}
 		}
 	}
