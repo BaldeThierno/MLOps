@@ -27,3 +27,4 @@ docker-compose -f compose-with-jupyter.yaml up -d
 
 + http://localhost:8060/mlrun/projects
 + http://localhost:8070/projects
++ http://localhost:8888/lab?
