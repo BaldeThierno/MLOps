@@ -1,0 +1,22 @@
+kind: project
+metadata:
+  name: cancer-project
+spec:
+  params:
+    label_column: label
+  functions:
+  - url: src/prep-data.py
+    name: prep-data
+    image: mlrun/mlrun
+    handler: breast_cancer_generator
+    with_repo: true
+  - url: hub://auto-trainer
+    name: auto-trainer
+  workflows: 
+  - name: main
+    path: ./src/workflow.py
+    engine: kfp
+  artifacts: []
+  conda: ''
+  source: ''
+  desired_state: online
