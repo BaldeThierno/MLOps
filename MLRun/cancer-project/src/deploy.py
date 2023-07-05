@@ -48,3 +48,7 @@ my_server = ClassifierModel('classifier', model_dir=model)
 my_server.load()
 
 my_server.predict({"instances": sample})
+
+#Model Path
+#'store://artifacts/Project_name/Model_name:UID_JOB'
+#'store://artifacts/cancer-project/mon_model_cancer:b4a5601278d8449ba8f8ede9d2fb9f85'

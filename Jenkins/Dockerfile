@@ -1,6 +1,11 @@
 FROM jenkins/jenkins:2.332.3-jdk11 
-USER root 
-RUN apt-get update && apt-get install -y lsb-release 
+USER root
+RUN echo "jenkins ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+RUN apt-get update && apt-get install -y lsb-release && apt-get install sshpass && apt-get install sudo
+RUN apt -y install software-properties-common
+#RUN apt-add-repository -y ppa:ansible/ansible
+RUN	apt-get -y install ansible 
+
 RUN curl -fsSLo /usr/share/keyrings/docker-archive-keyring.asc \ 
   https://download.docker.com/linux/debian/gpg 
 RUN echo "deb [arch=$(dpkg --print-architecture) \ 
